@@ -1,7 +1,6 @@
 import numpy as np
 import random
 import sys
-import math
 
 class ReSHADE:
 
@@ -158,26 +157,3 @@ class ReSHADE:
             print(nfes)
         print(self.population[0])
         return self.function(self.population[0])
-
-
-def func(x):
-    res = 0
-    for x_ in x:
-        res += x_ ** 2
-    return res
-
-
-def func2(x):
-    sum = 0
-    p = 0
-    for i in range(len(x)):
-        sum += math.fabs(x[i])
-        p *= math.fabs(x[i])
-    res = sum + p
-    return res
-
-
-test_case = ReSHADE(borders=[-100, 100], function=func, max_nfes=100000, population_size=100, problem_size=30)
-# print(test_case.ReDE(0.8, 0.7))
-print(test_case.ReSHADE())
-
